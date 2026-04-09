@@ -1,0 +1,14 @@
+.title{
+	display: flex;
+	align-items: center;
+	gap: 0;
+	margin: 0;
+}
+
+.ya{
+	color: var(--color-red);
+}
+
+.text{
+	color: var(--color-black);
+}
