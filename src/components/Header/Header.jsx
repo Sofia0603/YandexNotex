@@ -1,6 +1,6 @@
 import styles from './Header.module.css'
 
-export const Header = () => {
+export const Header = function Header({ notesCount }) {
 	return (
 		<header className={styles.header}>
 			<h1 className={styles.title}>
@@ -9,7 +9,7 @@ export const Header = () => {
 			</h1>
 
 			<div className={styles.notesCount}>
-				Всего заметок: <span id="notesCount">1</span>
+				Всего заметок: <span id="notesCount">{notesCount}</span>
 			</div>
 		</header>
 	)
