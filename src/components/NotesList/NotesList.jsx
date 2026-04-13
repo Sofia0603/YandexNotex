@@ -11,6 +11,7 @@ export const NotesList = ({ notes, setNotes }) => {
 						title={note.title}
 						content={note.content}
 						tags={note.tags}
+						id={note.id}
 						onDelete={() => {
 							setNotes(notes.filter(currentNote => currentNote.id !== note.id))
 						}}

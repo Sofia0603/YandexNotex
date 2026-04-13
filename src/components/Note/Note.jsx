@@ -3,18 +3,17 @@ import { Trash } from 'lucide-react'
 import { Tag } from '../Tag/Tag'
 import { Modal } from '../Modal/Modal'
 import { useState } from 'react'
+import { Link } from 'react-router'
 
-export const Note = ({ title, content, tags, onDelete }) => {
+
+export const Note = ({ title, content, tags, onDelete , id}) => {
 	const [isModalOpen, setIsModalOpen] = useState(false)
 
 	return (
 		<>
-			<div
-				className={styles.note}
-				onClick={() => setIsModalOpen(true)}
-			>
+			<div className={styles.note}>
 				<div className={styles.header}>
-					<h2 className={styles.title}>{title}</h2>
+					<Link to={`note/${id}`} className={styles.title}>{title}</Link>
 					<button
 						className={styles.deleteButton}
 						title="Удалить"
@@ -45,7 +44,10 @@ export const Note = ({ title, content, tags, onDelete }) => {
 					<p className={styles.modalContent}>{content}</p>
 					<div className={styles.modalTags}>
 						{tags.map(tag => (
-							<Tag key={tag} tag={tag}/>
+							<Tag
+								key={tag}
+								tag={tag}
+							/>
 						))}
 					</div>
 				</div>
