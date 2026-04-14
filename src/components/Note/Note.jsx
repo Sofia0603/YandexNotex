@@ -7,6 +7,7 @@ import { Link } from 'react-router'
 
 
 export const Note = ({ title, content, tags, onDelete , id}) => {
+	
 	const [isModalOpen, setIsModalOpen] = useState(false)
 
 	return (
