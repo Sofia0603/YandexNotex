@@ -1,3 +1,4 @@
+import { NoteService } from '../../services/note'
 import styles from './NotesForm.module.css'
 import { useState } from 'react'
 
@@ -10,7 +11,7 @@ export const NotesForm = function NotesForm({ onAddNote }) {
 	const onSubmit = e => {
 		e.preventDefault()
 
-		if (!title.trim()) {
+		if (!NoteService.verify({title, content, tags })) {
 			setError('Необходимо указать заголовок')
 			return
 		}
